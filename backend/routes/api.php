@@ -9,6 +9,10 @@ use App\Http\Controllers\magang\FormMagangController;
 use App\Http\Controllers\magang\PendaftaranController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AchievmentsController;
+use App\Http\Controllers\event_organizer\CategoryController;
+use App\Http\Controllers\event_organizer\EventController;
+use App\Http\Controllers\event_organizer\PlaceController;
+use App\Http\Controllers\event_organizer\RequestedEventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +80,20 @@ Route::group(['middleware' => 'siswa'], function () {
     });
 });
 
+//Event Organizer Api
+Route::group(['prefix' => 'event_organizer'],function(){
+    Route::resource('category',CategoryController::class);
+    Route::resource('place',PlaceController::class);
+    //Events
+    Route::get('userEvents',[EventController::class,'indexUser']);
+    Route::resource('events',EventController::class);
+    
+    //Requested Events
+    Route::resource('requested_events',RequestedEventController::class);
+    Route::post('actionEvent/{id}',[RequestedEventController::class,'actionEvent']);
+
+    
+});
 
 // Public Endpoint
 Route::get('news', [NewsController::class, 'index']);
