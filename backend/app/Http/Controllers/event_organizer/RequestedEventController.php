@@ -87,7 +87,9 @@ class RequestedEventController extends Controller
     public function store(RequestedEventRequest $request)
     {   
         $validateData = $request->validated();
+        $image = $request->file('image')->store('img-event');
         $validateData['status'] = "P";
+        $validateData['image'] = $image;
         RequestedEvent::create($validateData);
         $events = RequestedEvent::with('category')
         ->with('place')
