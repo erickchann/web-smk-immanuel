@@ -90,9 +90,8 @@ Route::group(['prefix' => 'event_organizer'],function(){
     
     //Requested Events
     Route::resource('requested_events',RequestedEventController::class);
+    Route::get('allRequestedEvent',[RequestedEventController::class,'getAll']);
     Route::post('actionEvent/{id}',[RequestedEventController::class,'actionEvent']);
-
-    
 });
 
 // Public Endpoint
