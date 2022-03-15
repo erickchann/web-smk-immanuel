@@ -5,6 +5,7 @@ namespace App\Http\Controllers\event_organizer;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Participant;
 use Carbon\Carbon;
 
 class EventController extends Controller
@@ -25,11 +26,13 @@ class EventController extends Controller
         ->get();
         
         foreach($events as $event){
+            $participant = Participant::where('event_id',$event->id)->count();
             if($event->time <= $now){
                 $event->status = "N";
             }else{
                 $event->status = "Y";
             }
+            $event->participants = $participant;
             $event->save();
         }
         return response()->json([

@@ -8,6 +8,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\News;
+use App\Models\Participant;
 use App\Models\Place;
 use App\Models\RequestedEvent;
 use App\Models\Tbkelas;
@@ -383,7 +384,7 @@ Ayo segera bergabung bersama kami.
             'admin_id'=>1,
             'category_id'=>1,
             'place_id'=>1,
-            'image'=>'gada image',
+            'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
             'description'=>'Belajar frame work angular js bersama sama',
             'time'=>'2022-03-15 07:16:46.000000'
         ]);
@@ -393,10 +394,15 @@ Ayo segera bergabung bersama kami.
             'user_id'=>1,
             'category_id'=>1,
             'place_id'=>1,
-            'image'=>'gada image',
+            'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
             'description'=>'Belajar frame work angular js bersama sama',
             'status'=>'P',
             'time'=>'2022-03-15 07:16:46.000000'
+        ]);
+
+        Participant::create([
+            'user_id'=>1,
+            'event_id'=>1
         ]);
     }
 }

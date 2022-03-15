@@ -11,6 +11,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AchievmentsController;
 use App\Http\Controllers\event_organizer\CategoryController;
 use App\Http\Controllers\event_organizer\EventController;
+use App\Http\Controllers\event_organizer\ParticipantController;
 use App\Http\Controllers\event_organizer\PlaceController;
 use App\Http\Controllers\event_organizer\RequestedEventController;
 use Illuminate\Http\Request;
@@ -92,6 +93,9 @@ Route::group(['prefix' => 'event_organizer'],function(){
     Route::resource('requested_events',RequestedEventController::class);
     Route::get('allRequestedEvent',[RequestedEventController::class,'getAll']);
     Route::post('actionEvent/{id}',[RequestedEventController::class,'actionEvent']);
+
+    //Participant
+    Route::resource('participant',ParticipantController::class);
 });
 
 // Public Endpoint
