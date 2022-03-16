@@ -96,6 +96,7 @@ Route::group(['prefix' => 'event_organizer'],function(){
 
     //Participant
     Route::resource('participant',ParticipantController::class);
+    Route::post('getEventParticipant',[ParticipantController::class,'getEventParticipant']);
 });
 
 // Public Endpoint

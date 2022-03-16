@@ -22,7 +22,13 @@ class ParticipantController extends Controller
             'data'=>$participants
         ]);
     }
-
+    public function getEventParticipant(Request $request){
+        $participants = Participant::where('event_id',$request->event_id)->with('user')->get();
+        return response()->json([
+            'message'=>'Success Get Event Participant',
+            'data'=>$participants
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
