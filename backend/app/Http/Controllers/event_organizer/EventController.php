@@ -43,7 +43,7 @@ class EventController extends Controller
 
     public function indexUser(){
         $now = Carbon::now();
-        $events = Event::where('time','>=',$now)
+        $events = Event::where('start_time','>=',$now)
         ->with('category')
         ->with('place')
         ->with('user')

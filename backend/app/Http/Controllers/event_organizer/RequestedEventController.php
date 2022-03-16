@@ -48,7 +48,8 @@ class RequestedEventController extends Controller
             $event->name = $requestedEvent->name;
             $event->image = $requestedEvent->image;
             $event->description= $requestedEvent->description;
-            $event->time = $requestedEvent->time;
+            $event->start_time = $requestedEvent->start_time;
+            $event->end_time = $requestedEvent->end_time;
             $event->user_id = $requestedEvent->user_id;
             $event->admin_id = $request->admin_id;
             $event->category_id = $requestedEvent->category_id;

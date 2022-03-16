@@ -18,7 +18,8 @@ class CreateEventsTable extends Migration
             $table->text('name');
             $table->text('image');
             $table->text('description');
-            $table->dateTime('time',0);
+            $table->dateTime('start_time',0);
+            $table->dateTime('end_time',0);
             $table->bigInteger('participants')->nullable();
             $table->foreignId('user_id');
             $table->foreignId('admin_id');

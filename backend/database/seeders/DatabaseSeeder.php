@@ -386,7 +386,8 @@ Ayo segera bergabung bersama kami.
             'place_id'=>1,
             'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
             'description'=>'Belajar frame work angular js bersama sama',
-            'time'=>'2022-03-15 07:16:46.000000'
+            'start_time'=>'2022-04-15 07:00:00.000000',
+            'end_time'=>'2022-04-15 09:00:00.000000'
         ]);
 
         RequestedEvent::create([
@@ -397,7 +398,8 @@ Ayo segera bergabung bersama kami.
             'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
             'description'=>'Belajar frame work angular js bersama sama',
             'status'=>'P',
-            'time'=>'2022-03-15 07:16:46.000000'
+            'start_time'=>'2022-04-15 07:00:00.000000',
+            'end_time'=>'2022-04-15 09:00:00.000000'
         ]);
 
         Participant::create([
