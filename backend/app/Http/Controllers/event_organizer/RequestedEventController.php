@@ -63,6 +63,7 @@ class RequestedEventController extends Controller
         $events = RequestedEvent::with('category')
         ->with('place')
         ->with('user')
+        ->where('status','P')
         ->get();
         return response()->json([
             'message'=>$message,

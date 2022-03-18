@@ -89,14 +89,16 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
+        $eventDetail = Event::where('id',$id)
+        ->with('category')
+        ->with('place')
+        ->with('user')
+        ->with('admin')->first();
         return response()->json([
             "message"=>"Success Show Event Detail",
-            "data"=>$event->with('category')
-            ->with('place')
-            ->with('user')
-            ->with('admin')->first(),
+            "data"=>$eventDetail
         ]);
     }
 
