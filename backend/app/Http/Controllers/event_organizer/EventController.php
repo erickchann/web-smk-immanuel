@@ -93,7 +93,10 @@ class EventController extends Controller
     {
         return response()->json([
             "message"=>"Success Show Event Detail",
-            "data"=>$event
+            "data"=>$event->with('category')
+            ->with('place')
+            ->with('user')
+            ->with('admin')->first(),
         ]);
     }
 
