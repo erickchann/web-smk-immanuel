@@ -5,7 +5,12 @@ namespace Database\Seeders;
 use App\Models\Achievement;
 use App\Models\Admin;
 use App\Models\Banner;
+use App\Models\Category;
+use App\Models\Event;
 use App\Models\News;
+use App\Models\Participant;
+use App\Models\Place;
+use App\Models\RequestedEvent;
 use App\Models\Tbkelas;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -348,5 +353,58 @@ Ayo segera bergabung bersama kami.
             'tag' => 'Berita',
             'date' => 'February 7, 2021'
         ]); 
+
+        Category::create([
+            'category' => 'Akuntansi'
+        ]);
+
+        Category::create([
+            'category' => 'Coding'
+        ]);
+
+        Category::create([
+            'category' => 'Pemasaran'
+        ]);
+
+        Place::create([
+            'place' => 'Gedung Lama'
+        ]);
+
+        Place::create([
+            'place' => 'Gedung Baru'
+        ]);
+
+        Place::create([
+            'place' => 'Co Working'
+        ]);
+
+        Event::create([
+            'name'=>'Belajar Angular Bersama',
+            'user_id'=>1,
+            'admin_id'=>1,
+            'category_id'=>1,
+            'place_id'=>1,
+            'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
+            'description'=>'Belajar frame work angular js bersama sama',
+            'start_time'=>'2022-04-15 07:00:00.000000',
+            'end_time'=>'2022-04-15 09:00:00.000000'
+        ]);
+
+        RequestedEvent::create([
+            'name'=>'Belajar Angular Bersama',
+            'user_id'=>1,
+            'category_id'=>1,
+            'place_id'=>1,
+            'image'=>'img-event/hnI6TEzp2gtSJ6i6mN5ivJIB8cggsxBLGNcz90F9.jpg',
+            'description'=>'Belajar frame work angular js bersama sama',
+            'status'=>'P',
+            'start_time'=>'2022-04-15 07:00:00.000000',
+            'end_time'=>'2022-04-15 09:00:00.000000'
+        ]);
+
+        Participant::create([
+            'user_id'=>1,
+            'event_id'=>1
+        ]);
     }
 }
