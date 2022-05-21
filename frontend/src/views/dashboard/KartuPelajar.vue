@@ -2,12 +2,12 @@
     <div>
         <div class="row">
             <div class="col-lg-6">
-                <img :src="url" alt="Kartu Pelajar" class="student-card" @error="imageError">
+                <img :src="`${url}?id=${Date.now()}`" alt="Kartu Pelajar" class="student-card" @error="imageError">
                 <button type="button" class="btn btn-primary form-control mt-2" @click="downloadColor">Download</button>
             </div>
 
             <div class="col-lg-6">
-                <img :src="url" alt="Kartu Pelajar" class="student-card card-gray" @error="imageError">
+                <img :src="`${url}?id=${Date.now()}`" alt="Kartu Pelajar" class="student-card card-gray" @error="imageError">
                 <button type="button" class="btn btn-primary form-control mt-2" @click="downloadGrayscale">Download</button>
             </div>
         </div>
